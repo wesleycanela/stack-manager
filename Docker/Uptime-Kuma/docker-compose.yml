@@ -1,6 +1,7 @@
 services:
   uptime-kuma:
     image: louislam/uptime-kuma
+    container_name: uptime-kuma
     volumes:
       - $UPTIME_KUMA_DATA:/app/data
     ports:
