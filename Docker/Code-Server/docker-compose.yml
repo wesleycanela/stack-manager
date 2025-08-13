@@ -6,11 +6,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Berlin
-      - PASSWORD=MyStrongLoginPassword
-      - SUDO_PASSWORD=MyOptionalStrongSudoPassword #optional
-      #- SUDO_PASSWORD_HASH= #optional
-      - PROXY_DOMAIN=vscode.example.com #optional
+      - TZ=$TZ
+      - PASSWORD=$PASSWORD
+      - SUDO_PASSWORD=$SUDO_PASSWORD #optional
+      #- SUDO_PASSWORD_HASH=$SUDO_PASSWORD_HASH #optional
+      - PROXY_DOMAIN=$PROXY_DOMAIN #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/vscode/config:/config
