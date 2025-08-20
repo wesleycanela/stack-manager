@@ -1,0 +1,19 @@
+services:
+  waha:
+    restart: always
+    container_name: waha
+    image: devlikeapro/waha:latest
+    ports:
+      - '3000:3000/tcp'
+    volumes:
+      - ./sessions:/app/.sessions
+      - ./media:/app/.media
+    environment:
+      - WAHA_API_KEY=$WAHA_API_KEY
+      - WAHA_DASHBOARD_USERNAME=$WAHA_DASHBOARD_USERNAME
+      - WAHA_DASHBOARD_PASSWORD=$WAHA_DASHBOARD_PASSWORD
+      - WHATSAPP_DEFAULT_ENGINE=GOWS
+      #- WAHA_PRINT_QR=False
+      - WAHA_MEDIA_STORAGE=LOCAL
+      - WHATSAPP_FILES_LIFETIME=180
+      - WHATSAPP_FILES_FOLDER=/app/.media
